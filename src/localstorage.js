@@ -24,5 +24,14 @@ LS.prototype.deleteTodo = function (id) {
   localStorage.setItem('items', JSON.stringify(items));
 };
 
-
+LS.prototype.completeTodo = function (id) {
+  const items = this.fetchItem();
+  const index = items.findIndex((item) => item.id === id);
+  if (items[index].isComplete) {
+    items[index].isComplete = false;
+  } else {
+    items[index].isComplete = true;
+  }
+  localStorage.setItem('items', JSON.stringify(items));
+};
 export default LS;

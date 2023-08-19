@@ -54,7 +54,11 @@ Display.prototype.deleteTodo = function (e) {
   item.remove();
 };
 
-
-
+Display.prototype.completeTodo = function (e) {
+  const item = e.target.parentElement.parentElement;
+  const id = item.dataset.createdate;
+  ls.completeTodo(id);
+  item.classList.toggle('completed');
+};
 
 export default Display;

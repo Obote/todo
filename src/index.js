@@ -16,3 +16,12 @@ document.querySelector('.AddTaskBtn').addEventListener('click', (e) => {
     display.resetForm();
   }
 });
+
+document.querySelector('.taskList').addEventListener('click', (e) => {
+  if (e.target.className.includes('taskIconDelete')) {
+    display.deleteTodo(e);
+  }
+  if (e.target.className.includes('task-check')) {
+    display.completeTodo(e);
+  }
+});
