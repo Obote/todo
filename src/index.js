@@ -25,3 +25,15 @@ document.querySelector('.taskList').addEventListener('click', (e) => {
     display.completeTodo(e);
   }
 });
+
+document.querySelector('.EditTaskBtn').addEventListener('click', (e) => {
+  display.updateTodo(e);
+});
+
+document.querySelector('.CancelTaskBtn').addEventListener('click', (e) => {
+  display.cancelTodo(e);
+});
+
+document.querySelector('.completeTaskBtn').addEventListener('click', (e) => {
+  display.clearCompleted(e);
+});
