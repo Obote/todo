@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <title>To-Do List</title>
-<script defer src="main.js"></script></head>
-<body>
- <div class="tasklist">
-  <nav>
-    <header>
-      <p>Todo List</p>
-    </header>
-  </nav>
-  <div class="container">
-    <div class="newTask">
-      <div class="newTaskInput">
-        <input type="text" id="newTaskID" placeholder="Add your task here...">
-      </div>
-      <div class="newTaskBtn">
-        <button class="AddTaskBtn">Add Task</button>
-        <buttun class="EditTaskBtn">Edit Task</buttun>
-        <button class="CancelTaskBtn">Cancel</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <div class="tasklist">
+      <nav>
+        <header>
+          <p>To-Do List</p>
+        </header>
+      </nav>
+      <div class="container">
+        <div class="newTask">
+          <div class="newTaskInput">
+            <input
+              type="text"
+              id="newTaskID"
+              placeholder="Add new task here..."
+            />
+            <input type="hidden" name="updateTask" id="updateTaskId">
+          </div>
+          <div class="newTaskBtn">
+            <button class="EditTaskBtn" >Edit Task</button>  
+            <button class="AddTaskBtn">Add Task</button>
+            <button class="CancelTaskBtn">Cancel</button>
+          </div>
+        </div>
+
+        <div class="taskList">
+
+          
+        </div>
+        <button class="completeTaskBtn">Clear All Completed</button>  
       </div>
     </div>
 
-    <div class="taskList"> </div>
-    
 
-  </div>
- </div>
-
- <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-  <script type="module" src="./index.js"></script>
-</body>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="./index.js"></script>
+  </body>
 </html>
