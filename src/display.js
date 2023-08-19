@@ -1,0 +1,48 @@
+import LS from './localstorage.js';
+
+function Display() {}
+const ls = new LS();
+
+Display.prototype.showAllTodos = function () {
+  const items = ls.fetchItem();
+  let newHtml = '';
+  items.forEach((itm) => {
+    newHtml += `
+    <div class="task ${itm.isComplete ? 'completed' : ''}" data-createdate="${itm.id}">
+    <div class="taskDetails">
+          <input type="checkbox" class="task-check" ${itm.isComplete ? 'checked' : ''} />
+          <label class="taskTitle">${itm.title}</label>
+    </div>
+
+    <div class="taskIcon">
+          <ion-icon class="taskIconEdit" name="create-outline"></ion-icon> 
+          <ion-icon class="taskIconDelete" name="trash-outline"></ion-icon>
+    </div> 
+  </div>`;
+  });
+  document.querySelector('.taskList').innerHTML = newHtml;
+};
+
+Display.prototype.addToDisplay = function (item) {
+  ls.storeTodo(item);
+
+  const newHTML = `
+    <div class="task" data-createdate="${item.id}">
+        <div class="taskDetails">
+              <input type="checkbox" class="task-check" />
+              <label class="taskTitle">${item.title}</label>
+        </div>
+
+        <div class="taskIcon">
+              <ion-icon class="taskIconEdit" name="create-outline"></ion-icon>
+              <ion-icon class="taskIconDelete" name="trash-outline"></ion-icon>
+        </div>
+    </div>
+    `;
+
+  document.querySelector('.taskList').insertAdjacentHTML('afterbegin', newHTML);
+};
+
+Display.prototype.resetForm = function () {
+  document.querySelector('#newTaskID').value = '';
+};
