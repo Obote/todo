@@ -3,7 +3,7 @@
 *::before {
   padding: 0;
   margin: 0;
-  bax-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -17,8 +17,8 @@ body {
 
 .main-container {
   width: 40%;
-  background-color: #ffffff;
-  box-shadow: 2px 4px 5px rgb(0,0,0,0.2);
+  background-color: #fff;
+  box-shadow: 2px 4px 5px rgb(0, 0, 0, 0.2);
   padding-top: 10px;
 }
 
@@ -37,7 +37,7 @@ header h1 {
 form {
   display: flex;
   width: 100%;
-  border: 1px solid rgba(168, 127, 127 0.41);
+  border: 1px solid rgba(168, 127, 127, 0.41);
   border-left: none;
   border-right: none;
   margin-top: 1rem;
