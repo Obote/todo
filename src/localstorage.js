@@ -1,7 +1,7 @@
 function LS() {}
 
 // Initialize the counter from local storage or set it to 1 if not found.
-let todoIdCounter = parseInt(localStorage.getItem('todoIdCounter')) || 1;
+const todoIdCounter = parseInt(localStorage.getItem('todoIdCounter'), 10) || 1;
 
 LS.prototype.fetchItem = function () {
   let items = localStorage.getItem('items');
