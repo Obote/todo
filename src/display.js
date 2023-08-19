@@ -46,3 +46,15 @@ Display.prototype.addToDisplay = function (item) {
 Display.prototype.resetForm = function () {
   document.querySelector('#newTaskID').value = '';
 };
+
+Display.prototype.deleteTodo = function (e) {
+  const item = e.target.parentElement.parentElement;
+  const id = item.dataset.createdate;
+  ls.deleteTodo(id);
+  item.remove();
+};
+
+
+
+
+export default Display;
