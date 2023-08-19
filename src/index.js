@@ -1,50 +1,39 @@
 import './style.css';
+import Display from './display.js';
+import Todo from './todo.js';
 
-// Define an array of tasks
-const tasks = [
-  { description: 'Task 1', completed: false, index: 1 },
-  { description: 'Task 2', completed: true, index: 2 },
-  { description: 'Task 3', completed: false, index: 3 },
-];
+const display = new Display();
 
-// Function to populate the task list
-function populateTaskList() {
-  const taskList = document.getElementById('tasks');
+display.showAllTodos();
 
-  // Sort tasks by their index values
-  tasks.sort((a, b) => a.index - b.index);
+document.querySelector('.AddTaskBtn').addEventListener('click', (e) => {
+  e.preventDefault();
+  const listItem = document.getElementById('newTaskID').value;
 
-  tasks.forEach((task) => {
-    const listItem = document.createElement('li');
-    listItem.classList.add('list-item');
+  if (listItem.length > 0) {
+    const item = new Todo(listItem);
+    display.addToDisplay(item);
+    display.resetForm();
+  }
+});
 
-    const listDiv = document.createElement('div');
-    listDiv.classList.add('list-div');
+document.querySelector('.taskList').addEventListener('click', (e) => {
+  if (e.target.className.includes('taskIconDelete')) {
+    display.deleteTodo(e);
+  }
+  if (e.target.className.includes('task-check')) {
+    display.completeTodo(e);
+  }
+});
 
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.classList.add('check');
-    checkbox.checked = task.completed;
+document.querySelector('.EditTaskBtn').addEventListener('click', (e) => {
+  display.updateTodo(e);
+});
 
-    const description = document.createElement('p');
-    description.textContent = task.description;
+document.querySelector('.CancelTaskBtn').addEventListener('click', (e) => {
+  display.cancelTodo(e);
+});
 
-    const ellipsisIcon = document.createElement('i');
-    ellipsisIcon.classList.add('fas', 'fa-ellipsis-vertical');
-
-    listDiv.appendChild(checkbox);
-    listDiv.appendChild(description);
-    listItem.appendChild(listDiv);
-    listItem.appendChild(ellipsisIcon);
-
-    taskList.appendChild(listItem);
-  });
-}
-
-// Function to run when the page loads
-function onPageLoad() {
-  populateTaskList();
-}
-
-// Add an event listener to run onPageLoad when the DOM is ready
-document.addEventListener('DOMContentLoaded', onPageLoad);
+document.querySelector('.completeTaskBtn').addEventListener('click', (e) => {
+  display.clearCompleted(e);
+});
