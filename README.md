@@ -65,7 +65,7 @@ For more information on the importance of a professional README for your reposit
 
 # 📖 [To-Do List] <a name="about-project"></a>
 
-**[To-Do List]** In this project, The user will also be able to mark task completion by selecting the corresponding checkbox (or undo it by unchecking the checkbox). The updated tasks list will be stored in local storage.
+**[To-Do List]** is a project i hhave build with simple HTML list of To Do tasks
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -79,9 +79,9 @@ For more information on the importance of a professional README for your reposit
 </details>
 
 <details>
-  <summary>CSS</summary>
+  <summary>CSSmary>
   <ul>
-    <li><a href=""></a></li>
+    <li><a href="#">CSS</a></li>
   </ul>
 </details>
 
