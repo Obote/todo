@@ -1,5 +1,8 @@
 function LS() {}
 
+// Initialize the counter from local storage or set it to 1 if not found.
+let todoIdCounter = parseInt(localStorage.getItem('todoIdCounter')) || 1;
+
 LS.prototype.fetchItem = function () {
   let items = localStorage.getItem('items');
 
@@ -34,4 +37,7 @@ LS.prototype.completeTodo = function (id) {
   }
   localStorage.setItem('items', JSON.stringify(items));
 };
+
+localStorage.setItem('todoIdCounter', todoIdCounter);
+
 export default LS;
