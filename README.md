@@ -68,7 +68,7 @@
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://obote.github.io/todo-list/) -->
+[Live Demo Link](https://obote.github.io/todo-list/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
